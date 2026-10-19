@@ -1,0 +1,7 @@
+tracker_type: bytetrack
+track_high_thresh: 0.22      # Lower threshold to pick up people occluded by signs/flags
+track_low_thresh: 0.08       # Second stage ByteTrack association for heavy occlusions
+new_track_thresh: 0.28       # Threshold to initiate a new track
+track_buffer: 80             # Extended occlusion memory (~3-4 seconds behind banners/flags)
+match_thresh: 0.72           # Spatial matching tolerance across frames
+fuse_score: True

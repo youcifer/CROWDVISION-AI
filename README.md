@@ -543,5 +543,6 @@ If you use this project in your academic research or production deployment, plea
 <p align="center">
   <sub>Developed by <strong><a href="https://github.com/youcifer">Youssef Mahoufdhi</a></strong> • Engineered with ❤️ for accurate, privacy-first crowd counting and open computer vision research.</sub>
 </p>
-#   C R O W D V I S I O N - A I  
+#   C R O W D V I S I O N - A I 
+ 
  
