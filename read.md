@@ -27,17 +27,19 @@ Powered by **Flask**, **OpenCV (CLAHE)**, **Ultralytics YOLOv8**, **ByteTrack wi
   - [Crowd Headcount Accuracy by Scene Density](#crowd-headcount-accuracy-by-scene-density)
   - [ByteTrack MOT Performance & Occlusion Retention](#bytetrack-mot-tracking-performance)
   - [Hardware Inference Throughput (FPS)](#hardware-inference-throughput-fps)
-- [Quick Start Guide](#-quick-start-guide)
-  - [1. Clone Repository](#1-clone-repository)
-  - [2. Virtual Environment Setup](#2-virtual-environment-setup)
-  - [3. Install Dependencies](#3-install-dependencies)
-  - [4. (Optional) GPU Acceleration](#4-optional-gpu-acceleration-with-nvidia-cuda)
-  - [5. Run the Application](#5-run-the-application)
+- [How to Run Locally (Step-by-Step Guide)](#-how-to-run-locally-step-by-step-guide)
+  - [Step 1: Clone Repository](#step-1-clone-repository)
+  - [Step 2: Virtual Environment Setup](#step-2-create--activate-a-virtual-environment)
+  - [Step 3: Install Dependencies](#step-3-install-dependencies)
+  - [Step 4: (Optional) GPU Acceleration](#step-4-optional-enable-nvidia-cuda-gpu-acceleration)
+  - [Step 5: Start the Server](#step-5-start-the-local-flask-server)
+  - [Step 6: Open Web Dashboard](#step-6-access-the-application-in-your-browser)
 - [Parameter Calibration Guide](#-parameter-calibration-guide)
 - [REST API Reference](#-rest-api-reference)
 - [Project Structure](#-project-structure)
 - [Troubleshooting & FAQ](#-troubleshooting--faq)
 - [License & Citations](#-license--citations)
+- [Author & Maintainer](#-author--maintainer)
 
 ---
 
@@ -218,24 +220,15 @@ Processing speed measured with **YOLOv8s** and **YOLOv8n** at **Stride = 2x** an
 
 Follow these simple steps to set up and run CrowdVision AI on your local machine:
 
-### Step 1: Verify Python Installation
-CrowdVision AI requires **Python 3.10 to 3.13** (64-bit). Check your version:
+### Step 1: Clone Repository
 ```bash
-python --version
-```
-*(If `python` is not recognized, try `py` or `python3`)*
-
----
-
-### Step 2: Open Terminal in Project Directory
-Navigate to the root directory where the project files are located:
-```bash
-cd path/to/counter
+git clone https://github.com/youcifer/CROWDVISION-AI.git
+cd CROWDVISION-AI
 ```
 
 ---
 
-### Step 3: Create & Activate a Virtual Environment
+### Step 2: Create & Activate a Virtual Environment
 
 Isolating dependencies ensures a clean, conflict-free setup.
 
@@ -269,7 +262,7 @@ source venv/bin/activate
 
 ---
 
-### Step 4: Install Dependencies
+### Step 3: Install Dependencies
 
 Install all required Python packages with `pip`:
 ```bash
@@ -279,7 +272,10 @@ pip install -r requirements.txt
 
 *(FFmpeg is automatically bundled via `imageio-ffmpeg` — no separate system installation required!)*
 
-#### (Optional) Enable NVIDIA CUDA GPU Acceleration:
+---
+
+### Step 4: (Optional) Enable NVIDIA CUDA GPU Acceleration
+
 If you have an NVIDIA GPU and want maximum FPS throughput:
 ```bash
 # For CUDA 12.1+:
@@ -338,6 +334,7 @@ To stop the application at any time, press `CTRL + C` in your terminal window, a
 ```bash
 deactivate
 ```
+
 ---
 
 ## 🎛 Parameter Calibration Guide
@@ -459,7 +456,7 @@ The server exposes clean REST endpoints for headless integration and automated v
 ## 📁 Project Structure
 
 ```
-counter/
+CROWDVISION-AI/
 ├── app.py                  # Flask server, YOLOv8 ByteTrack pipeline, H.264 FFmpeg encoder
 ├── protest_tracker.yaml    # ByteTrack configuration with 80-frame occlusion memory
 ├── requirements.txt        # Python dependency specifications
